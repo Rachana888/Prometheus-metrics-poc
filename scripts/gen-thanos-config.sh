@@ -20,6 +20,7 @@ mkdir -p "$OUT_DIR"
 
 cat <<EOF > "$OUT_FILE"
 type: S3
+prefix: ${TENANT}
 config:
   bucket: ${DO_SPACES_BUCKET}
   endpoint: ${DO_SPACES_REGION}.digitaloceanspaces.com
@@ -27,7 +28,6 @@ config:
   secret_key: ${DO_SPACES_SECRET_KEY}
   insecure: false
   signature_version2: false
-  prefix: ${TENANT}
 EOF
 
 chmod 600 "$OUT_FILE"
