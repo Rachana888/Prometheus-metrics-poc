@@ -1,0 +1,8 @@
+global:
+  external_labels:
+    tenant: tenant-b
+
+scrape_configs:
+  - job_name: otel
+    static_configs:
+      - targets: ['localhost:8889']
